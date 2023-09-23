@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">FoodPlaner</string>
+    <string name="clickHere"><u>Click Here</u></string>
+    <string name="title_activity_welcome_page">WelcomePage</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="survaytext">We want to know more about you so we can personalise your experience on this app.\n
+        If u havent already taken the survey, click on the SURVEY button.
+        If u have or you do not want to take the survey proceed to the main page by clicking the PROCEED button.
+    </string>
+
+    <string name="omelet_directions">
+        Heat 2 teaspoons of butter in an 8-inch omelet pan or skillet over medium-high heat. Allow the butter to melt just until it begins to brown. As the butter melts, tilt the pan to coat the bottom evenly. Cook 2 tablespoons of chopped fully cooked ham, 1 tablespoon of finely chopped bell pepper, and 1 tablespoon of finely chopped onion in the butter for 2 minutes, stirring frequently. Quickly pour 2 beaten eggs into the pan. While sliding the pan back and forth rapidly over the heat, quickly stir with a fork to spread the eggs continuously over the bottom of the pan as they thicken. Allow it to stand over the heat for a few seconds to lightly brown the bottom of the omelet. Be careful not to overcook as the omelet will continue to cook after folding. Tilt the pan and run a fork under the edge of the omelet, then jerk the pan sharply to loosen the eggs from the bottom of the pan. Fold the portion of the omelet nearest you just to the center. (Allow a portion of the omelet to slide up the side of the pan.) Turn the omelet onto a warm plate, flipping the folded portion of the omelet over so that it rolls over the bottom. Tuck the sides of the omelet under if necessary.
+    </string>
+    <string name="pancake_directions">
+        Combine 1 cup all-purpose flour, 2 tablespoons white sugar, 2 teaspoons baking powder, and 1 teaspoon salt in a large bowl. Make a well in the center, and pour in 1 cup milk, 2 tablespoons vegetable oil, and 1 beaten egg. Mix until smooth. Heat a lightly oiled griddle or frying pan over medium-high heat. Pour or scoop batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, 1 to 2 minutes. Flip and cook until browned on the other side. Repeat with remaining batter.
+    </string>
+
+    <string name="smoothie_directions">
+        In a blender, combine 100ml of full-fat milk and 2 tablespoons of natural yogurt. Add 1 ripe banana, 150g of frozen fruits of the forest, 50g of blueberries, 1 tablespoon of chia seeds, and ½ teaspoon of cinnamon to the blender. Toss in 1 tablespoon of goji berries and 1 teaspoon of mixed seeds. For a touch of sweetness, drizzle 1 teaspoon of honey, into the mix. Secure the blender lid and blitz the ingredients until you achieve a smooth and creamy consistency. Pour your nutritious smoothie into a glass, and it is ready to enjoy!
+    </string>
+
+    <string name="tunawrap_directions">
+        In a small bowl, combine the light tuna, finely chopped celery, chopped green onions, chopped water chestnuts, chopped sweet red pepper, reduced-fat mayonnaise, and prepared mustard. Mix these ingredients until they are well blended. Lay out two spinach tortillas, each measuring 8 inches, at room temperature. Divide the tuna mixture evenly between the two tortillas. Spread the mixture evenly over the surface of each tortilla. Sprinkle 1/2 cup of shredded lettuce over the tuna mixture on each tortilla. Carefully roll up each tortilla tightly, jelly-roll style, enclosing the flavorful filling. Slice the roll-ups into halves or quarters, depending on your preference. These tuna roll-ups are not only delicious but also a convenient and healthy meal option. Enjoy!"
+    </string>
+
+    <string name="pizza_directions">
+        Begin by removing the store-bought pizza crust from its wrapper. Place it on a cookie sheet or pizza stone. For a crispier crust, you can place it directly on the oven rack with a cookie sheet underneath to catch any spillovers. Brush the pizza crust with 1 tablespoon of olive oil, ensuring it is evenly coated. Next, top the crust with your sauce of choice, spreading it to your preferred thickness. You can use your favorite jarred pasta/pizza sauce or try our homemade creamy tomato sauce. Sprinkle 1 cup of shredded mozzarella cheese over the sauce. You can add more cheese if you prefer a cheesier pizza. Evenly distribute 2 tablespoons of grated Parmesan cheese over the pizza. Sprinkle the coarsely chopped fresh basil on top for a burst of flavor. Drizzle the remaining 1 tablespoon of olive oil over the entire pizza to enhance its richness. Preheat your oven to 450 degrees Fahrenheit, and then bake the pizza for 8 to 12 minutes. Be sure to check after 8 minutes to ensure it reaches your desired level of crispiness. Your homemade pizza is now ready!
+    </string>
+    
+    <string name="chickedalfredo_directions">
+        Begin by cooking 8 ounces of fettuccine according to the package instructions. During the last 2 minutes of the pasta\'s cooking time, add 2 cups of fresh broccoli florets to the boiling water. Drain the pasta mixture. In a large nonstick skillet, heat ¼ cup of Kraft Zesty Italian Dressing over medium-high heat. Add the 1 pound of boneless skinless chicken breasts, cut into bite-sized pieces. Cook the chicken until it is no longer pink in the center, stirring occasionally. This typically takes about 5 to 7 minutes. Stir in 1 ⅔ cups of milk, 4 ounces of Philadelphia Cream Cheese (cubed), ¼ cup of Kraft Grated Parmesan Cheese, and ½ teaspoon of dried basil leaves. Bring the mixture to a boil while stirring constantly. Cook until the sauce is well blended and heated through, which usually takes about 1 to 2 minutes. Add the chicken mixture to the pasta mixture and mix lightly. This recipe results in a creamy and flavorful Fettuccine Alfredo with Chicken and Broccoli that the whole family will enjoy!"
+    </string>
+
+    <string name="salmon_directions">
+        Season salmon fillets with salt and pepper. Grill over medium-high heat for about 4-5 minutes per side until flaky and opaque. Make Lemon Herb Butter: Melt butter in a saucepan, add lemon juice, fresh herbs, and minced garlic. Heat briefly. Transfer grilled salmon to a serving platter, then drizzle warm lemon herb butter generously over the top. Pair with your favorite sides and garnish with extra herbs or lemon wedges. Enjoy this flavorful and elegant dish!
+    </string>
+
+    <string name="beeftaco_directions">
+        Brown ground beef and season with taco seasoning according to package instructions. Heat tortillas in the microwave or on a skillet until warm and pliable. Place seasoned beef on tortillas. Top with lettuce, tomatoes, cheese, and salsa. Fold tortillas and enjoy your delicious homemade beef tacos!
+    </string>
+
+    <string name="risotto_directions">
+        In a skillet, sauté sliced mushrooms and finely diced onion until tender and lightly browned. Season with salt and pepper. Stir in Arborio rice and toast it until slightly translucent at the edges. Pour in white wine and stir until mostly absorbed. Slowly add broth one ladleful at a time, stirring until rice is tender and creamy. Remove from heat and stir in Parmesan cheese for creaminess. Plate hot, garnish with more cheese and herbs if desired. Enjoy your Mushroom Risotto!
+    </string>
+
+</resources>
