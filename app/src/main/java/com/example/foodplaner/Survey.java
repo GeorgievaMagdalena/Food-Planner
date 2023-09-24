@@ -60,7 +60,6 @@ public class Survey extends AppCompatActivity {
         Log.i("ID", String.valueOf(userId));
 
         /*
-        //statichki dodavame alergii
         AllergyModel allergyModel = new AllergyModel(1, "peanuts");
         boolean success = db.RegisterAllergy(allergyModel);
         Log.i("AL", String.valueOf(success));
@@ -96,9 +95,9 @@ public class Survey extends AppCompatActivity {
                 EditText inputLocation = (EditText) findViewById(R.id.editTextTextPostalAddress);
                 location = inputLocation.getText().toString();
 
-                isVeg = isVegSwitch.isChecked();//vrakja true ako e switchnato na on
+                isVeg = isVegSwitch.isChecked();
 
-                boolean peanuts = PeanutsCB.isChecked(); //true ako e chekirano
+                boolean peanuts = PeanutsCB.isChecked();
                 boolean milk = MilkCB.isChecked();
                 boolean egg = EggCB.isChecked();
                 boolean fish = FishCB.isChecked();
@@ -137,8 +136,6 @@ public class Survey extends AppCompatActivity {
     }
 
 
-
-// DODADENI VEKJE NE MORA DA SE POVIKUVA STALNO
     private void insertSampleRecipes() {
         DatabaseHandler databaseHandler = new DatabaseHandler(Survey.this);
 

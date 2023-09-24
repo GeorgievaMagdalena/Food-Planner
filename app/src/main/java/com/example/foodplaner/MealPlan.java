@@ -1,5 +1,7 @@
 package com.example.foodplaner;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +46,6 @@ public class MealPlan extends AppCompatActivity {
         ArrayList<mySecondAdapter.Recipe> meals = databaseHandler.getMeals(userId);
         Log.i("PR", String.valueOf(meals));
 
-        //NAPRAJ DA SE POVIKUVA VTORIOT onBindView
         mRecyclerView = (RecyclerView) findViewById(R.id.listMyMeals);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -52,33 +53,37 @@ public class MealPlan extends AppCompatActivity {
 
         mAdapter = new mySecondAdapter(meals, R.layout.my_meal, this);
 
-        //прикачување на адаптерот на RecyclerView
         mRecyclerView.setAdapter(mAdapter);
 
         ArrayList<String> mealNames = new ArrayList<>();
         for (mySecondAdapter.Recipe recipe : meals) {
-            //String mealName = ;
             mealNames.add(recipe.getName());
         }
-        String MealNames = mealNames.toString();
-        SendNotif(MealNames);
+        String MealNames = String.join(", ", mealNames);
+
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        SendNotif(MealNames, pendingIntent);
     }
 
-    private NotificationCompat.Builder getNotificationBuilder(String names) {
+    private NotificationCompat.Builder getNotificationBuilder(String names, PendingIntent pendingI) {
 
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this);
         notifyBuilder.setContentTitle("Today's meals")
                 .setContentText(names)
                 .setSmallIcon(R.drawable.baseline_notifications_active_24)
-                // .setContentIntent(notificationPendingIntent)
+                 .setContentIntent(pendingI)
                 // .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(NotificationCompat.DEFAULT_ALL);
         return notifyBuilder;
     }
 
-    public void SendNotif(String names){
-        NotificationCompat.Builder notifyBuilder = getNotificationBuilder(names);
+    public void SendNotif(String names, PendingIntent pendingIntent){
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder(names,pendingIntent);
         Notification notification = notifyBuilder.build();
         mNotifManager.notify(NOTIFICATION_ID, notification);
     }

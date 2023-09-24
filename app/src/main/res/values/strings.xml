@@ -7,9 +7,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="survaytext">We want to know more about you so we can personalise your experience on this app.\n
-        If u havent already taken the survey, click on the SURVEY button.
-        If u have or you do not want to take the survey proceed to the main page by clicking the PROCEED button.
+    <string name="survaytext">We want to know more about you so we can personalise your experience on this app.\nIf u haven\'t already taken the survey, click on the SURVEY button.\nIf u have or you do not want to take the survey proceed to the main page by clicking the PROCEED button.
     </string>
 
     <string name="omelet_directions">

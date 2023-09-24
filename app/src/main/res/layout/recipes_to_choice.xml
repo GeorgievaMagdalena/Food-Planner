@@ -1,62 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="5dp">
-
-
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="5dp">
 
-        <!-- Mojs slika od recept-->
 
-        <ImageView
-            android:id="@+id/picture"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            tools:ignore="NotSibling" />
+            android:layout_height="match_parent"
+            >
 
-        <TextView
-            android:id="@+id/NameRecipe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/picture"
-            android:layout_centerInParent="true"
-            android:background="?android:selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:text="Recipe Name"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/green"
+                tools:ignore="NotSibling" />
 
-        <TextView
-            android:id="@+id/IngredientsRecipe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/NameRecipe"
-            android:layout_centerInParent="true"
-            android:background="?android:selectableItemBackground"
-            android:focusable="true"
-            android:gravity="center"
-            android:text="Ingredients"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-        <CheckBox
-            android:id="@+id/Checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/NameRecipe"
-        />
+            <CheckBox
+                android:id="@+id/Checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/picture"
+            />
+
+            <TextView
+                android:id="@+id/NameRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Checkbox"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Recipe Name"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/IngredientsRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/NameRecipe"
+                android:layout_centerInParent="true"
+                android:background="?android:selectableItemBackground"
+                android:focusable="true"
+                android:text="Ingredients"
+                android:layout_marginLeft="20dp"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
 
 
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>

@@ -20,7 +20,6 @@ public class WelcomePage  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 
-        //za pozdrav na korisnik
         userName = findViewById(R.id.nameUser);
         userEmail = getIntent().getStringExtra("userEmail");
         DatabaseHandler databaseHandler = new DatabaseHandler(WelcomePage.this);
@@ -34,7 +33,6 @@ public class WelcomePage  extends AppCompatActivity {
         }
 
         Button button = (Button)findViewById(R.id.proceedButton);
-        //intent za nosenje na recipes page
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

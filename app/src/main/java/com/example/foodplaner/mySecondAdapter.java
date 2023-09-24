@@ -61,7 +61,6 @@ public class mySecondAdapter extends RecyclerView.Adapter<mySecondAdapter.ViewHo
         }
     }
 
-    // конструктор
     public mySecondAdapter(ArrayList<mySecondAdapter.Recipe> chosenRecipes, int rowLayout1, Context context) {
         this.chosenRecipes = chosenRecipes;
         this.rowLayout1 = rowLayout1;
@@ -78,8 +77,8 @@ public class mySecondAdapter extends RecyclerView.Adapter<mySecondAdapter.ViewHo
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         mySecondAdapter.Recipe recipe = chosenRecipes.get(i);
 
-        viewHolder.mName.setText("Chosen: " + recipe.getName());
-        viewHolder.mIngredients.setText("Chosen: " + recipe.getIngredients());
+        viewHolder.mName.setText(recipe.getName());
+        viewHolder.mIngredients.setText("Ingredients: " + recipe.getIngredients());
         String directions = recipe.getDirection();
 
         viewHolder.mName.setOnClickListener(new View.OnClickListener() {

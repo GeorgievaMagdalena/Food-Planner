@@ -45,8 +45,8 @@ public class Login extends AppCompatActivity {
                         Boolean checkemail_password=DB.checkEmailPassword(email, pass);
                         if(checkemail_password==false){
                             Toast.makeText(Login.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
-                        }else{                                                 //za da ne pokazhvit errore ostaeno registration
-                            Intent intent=new Intent(getApplicationContext(), WelcomePage.class);//napraj nov activity POSLE LOGIN
+                        }else{
+                            Intent intent=new Intent(getApplicationContext(), WelcomePage.class);
                             intent.putExtra("userEmail", email);
                             startActivity(intent);
                         }

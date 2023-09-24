@@ -31,7 +31,7 @@ public class Registration  extends AppCompatActivity {
             public void onClick(View view) {
                 DatabaseHandler databaseHandler = new DatabaseHandler(Registration.this);
 
-                String emailToCheck = email.getText().toString(); // Replace with the email you want to check
+                String emailToCheck = email.getText().toString();
                 if (databaseHandler.checkEmail(emailToCheck)) {
                     Toast.makeText(Registration.this, "This account already exists!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -41,7 +41,9 @@ public class Registration  extends AppCompatActivity {
                         userModel = new UserModel(-1, firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(),
                                 password.getText().toString(), null, null, false);
                         Toast.makeText(Registration.this, "User added!", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(getApplicationContext(), Login.class);
+                        Intent intent=new Intent(getApplicationContext(), WelcomePage.class);
+                        intent.putExtra("userEmail", emailToCheck);
+                        startActivity(intent);
                     } catch (Exception e) {
                         Toast.makeText(Registration.this, "Error creating user", Toast.LENGTH_SHORT).show();
                         userModel = new UserModel(-1, "error", "error", "error", "error", "error", "error", false);

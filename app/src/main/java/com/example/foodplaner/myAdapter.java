@@ -105,14 +105,12 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
         return !selectedRecipeIds.isEmpty();
     }
 
-    // Креирање нови views (повикано од layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(rowLayout, viewGroup, false);
         return new ViewHolder(v);
     }
 
-    // Замена на содржината во view (повикано од layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
             String name = ListNames.get(i);
@@ -132,7 +130,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
                 }
             });
 
-            viewHolder.myIngredients.setText(recipe.getIngredients());
+            viewHolder.myIngredients.setText("Ingredients: "+ recipe.getIngredients());
 
 
             viewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -161,7 +159,6 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    // Пресметка на големината на податочното множество (повикано од layout manager)
     @Override
     public int getItemCount() {
         return ListNames == null ? 0 : ListNames.size();

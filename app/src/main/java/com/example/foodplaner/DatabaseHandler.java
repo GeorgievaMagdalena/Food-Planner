@@ -31,8 +31,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String TABLE_ALLERGY="allergy_data";
     private static final String COLUMN_ID_ALLERGY="AllergyId";
     private static final String COLUMN_ALLERGY_NAME="AllergyName";
-    //private static final String COLUMN_USER_ID="UserId";//ALLERGY
-
 
     //Recipe table
     private static final String TABLE_RECIPE = "recipe_data";
@@ -43,25 +41,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String COLUMN_IS_VEGETARIAN = "isVegetarian";
     private static final String COLUMN_KIND = "Kind";
 
-
-
     //RECIPE - ALLERGY TABLE
     private static final String TABLE_RECIPE_ALLERGY_LINK = "recipe_allergy_link";
     private static final String COLUMN_RECIPEALLERGY_RECIPE_ID = "RecipeId";
     private static final String COLUMN_RECIPEALLERGY_ALLERGY_ID = "AllergyId";
-
 
     //RECIPE - USER TABLE
     private static final String TABLE_USER_RECIPE_LINK = "user_recipe_link";
     private static final String COLUMN_USER_RECIPE_USER_ID = "UserId";
     private static final String COLUMN_USER_RECIPE_RECIPE_ID = "RecipeId";
 
-    // User-Allergy Junction Table
+    // User-Allergy Table
     private static final String TABLE_USER_ALLERGY_LINK = "user_allergy_link";
     private static final String COLUMN_USERALLERGY_USER_ID = "UserId";
     private static final String COLUMN_USERALLERGY_ALLERGY_ID = "AllergyId";
-
-    // Create the User-Allergy Junction Table
 
     SQLiteDatabase database;
 
@@ -85,7 +78,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + COLUMN_INGREDIENTS + " TEXT, "
                 + COLUMN_DIRECTIONS + " TEXT, "
                 + COLUMN_IS_VEGETARIAN + " TEXT, "
-                + COLUMN_KIND + " INTEGER "    //DODADENO KIND
+                + COLUMN_KIND + " INTEGER "
                 + ")";
         db.execSQL(recipeQuery);
 
@@ -119,9 +112,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(allergyQuery);
     }
 
-    /* db.execSQL("DROP TABLE IF EXISTS "+TABLE_RECIPE);
-     db.execSQL("DROP TABLE IF EXISTS "+TABLE_USER_RECIPE_LINK);
-     db.execSQL("DROP TABLE IF EXISTS "+TABLE_RECIPE_ALLERGY_LINK);*/
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 2) {
@@ -130,7 +120,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             Log.i("VLEZE", "VLEZE VO ELSE VO ON UPGRADE");
         }
     }
-
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -157,9 +146,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }else{
             return true;
         }
-
     }
-    //Dodavanje informacija za User
+
     public boolean AdditionalInfo(String UserName, String gender, String location, boolean isVegetarian){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -192,10 +180,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }else{
             return true;
         }
-
     }
 
-    //DODAVANJE RECEPTI
     public boolean InsertRecipe(RecipeModel rm, int[] allergyIds) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -206,15 +192,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cv.put(COLUMN_IS_VEGETARIAN, rm.isVegetarian() ? "true" : "false");
         cv.put(COLUMN_KIND, rm.getKind());
 
-        //RecipeAllergyLinkModel recipeAllergyLinkModel; NE GO KORISTAM MOZHDA I NE TREBIT
-
         long insert = db.insert(TABLE_RECIPE, null, cv);
 
         if (insert != -1) {
             int recipeId = (int) insert;
-            // Retrieve the associated allergy IDs from your junction table
 
-            // Insert the retrieved allergy IDs into the junction table
             for (int allergyId : allergyIds) {
                 ContentValues allergyCv = new ContentValues();
                 allergyCv.put(COLUMN_RECIPEALLERGY_RECIPE_ID, recipeId);
@@ -616,22 +598,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return recipe;
     }
 
-
-
     public void deleteAllRowsFromTable() {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // Delete all rows from the specified table
         int rowsDeleted = db.delete("allergy_data", null, null);
 
-        // Check if any rows were deleted
         if (rowsDeleted > 0) {
             Log.d("DatabaseHandler", "Deleted " + rowsDeleted + " rows from " + "allergy_data");
         } else {
             Log.d("DatabaseHandler", "No rows deleted from " + "allergy_data");
         }
 
-        // Close the database
         db.close();
     }
 }

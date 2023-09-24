@@ -27,7 +27,7 @@ public class ChoiceRecipe extends AppCompatActivity {
     myAdapter mAdapter;
     Spinner spinnerKinds;
 
-    Integer selectedKind = -1; // Declare at the class level
+    Integer selectedKind = -1;
     ArrayList<String> recipesNames;
     ArrayList<String> recipesIngredients;
     ArrayList<Integer> recipesIds;
@@ -183,25 +183,16 @@ public class ChoiceRecipe extends AppCompatActivity {
             }
         });
 
-
-        //сетирање на RecyclerView контејнерот
         mRecyclerView = (RecyclerView) findViewById(R.id.listRecipesToChoice);
 
-        // оваа карактеристика може да се користи ако се знае дека промените
-        // во содржината нема да ја сменат layout големината на RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
-        // ќе користиме LinearLayoutManager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // и default animator (без анимации)
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        // сетирање на кориснички дефиниран адаптер myAdapter (посебна класа)
         mAdapter = new myAdapter(recipesNames,recipesIngredients,recipesIds, databaseHandler, R.layout.recipes_to_choice, this);
 
-        //прикачување на адаптерот на RecyclerView
         mRecyclerView.setAdapter(mAdapter);
-
     }
 }
